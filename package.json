@@ -1,0 +1,14 @@
+{
+  "name": "desafio-tunts",
+  "version": "1.0.0",
+  "description": "Desafio para vaga de desenvolvedor de Node na Tunts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Felipe Alves Matos",
+  "license": "ISC",
+  "dependencies": {
+    "google-spreadsheet": "^3.1.15"
+  }
+}

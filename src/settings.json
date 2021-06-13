@@ -1,0 +1,16 @@
+{
+  "document-id": "1Hn3btVXhnZySHyCFbZS_CpDZK85yZbdhbesjsGNzBhs",
+  "abscence-limit": 25,
+  "grade-approval": 70,
+  "grade-final": 5,  
+  "header-names": [
+    "Matricula", 
+    "Aluno", 
+    "Faltas", 
+    "P1", 
+    "P2", 
+    "P3", 
+    "Situação", 
+    "Nota para Aprovação Final"
+  ]
+}
