@@ -2,10 +2,10 @@
 
 Criar uma aplicação em NodeJs. A aplicação deve ser capaz de ler uma planilha do google sheets, buscar as informações necessárias, calcular e escrever o resultado na planilha.
 
-## Instalaçao
+## Instalação
 
 **Pré Requisitos:**
-Faz-se necessário a instalaçao do Node no computador (https://nodejs.org/en/)
+Faz-se necessário a instalaçao do [Node](https://nodejs.org/en/) no computador 
 
 1. Clonar esse repositório em seu computador
 2. Executar o comando:
@@ -15,10 +15,14 @@ Faz-se necessário a instalaçao do Node no computador (https://nodejs.org/en/)
 ```
 
 
-### Configuraçao
+### Configuração
+
+**Planilha de Referencia:** </br>
+https://docs.google.com/spreadsheets/d/1XvWJcRLj2WAeXO3ULQ_GxGm9---3SZkjMbGcXMJtt70/edit?usp=sharing
+
 
 1. É necessario a coleta das credenciais da api "Google Sheets" na plataforma para desenvolvedores da google.
-    1. Acessar o link https://console.cloud.google.com/apis/library/sheets.googleapis.com/
+    1. Acessar o [link](https://console.cloud.google.com/apis/library/sheets.googleapis.com/)
     2. Selecionar a opçao "Ativar"
     3. Na aba "Credenciais", clicar em "Gerenciar contas de serviço"
     4. Selecionar o botao "Criar conta de serviço e preencher as informaçoes necessárias
@@ -51,5 +55,5 @@ Após configurar, basta entrar no terminal na pasta do projeto e rodar o comando
 - NodeJs
 
 **Bibliotecas / Modulos:**
-- (Google-Spreadsheet)[https://www.npmjs.com/package/google-spreadsheet]
+- [Google-Spreadsheet](https://www.npmjs.com/package/google-spreadsheet)
 
