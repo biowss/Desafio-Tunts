@@ -51,7 +51,7 @@ exports.editSpreadSheet = async() =>{
       }
       else if(averageGrade < Settings['grade-approval']) {
         row._rawData[6] = 'Exame Final'
-        row._rawData[7] = 10 - averageGrade
+        row._rawData[7] = 100 - averageGrade
       }
       else {
         row._rawData[6] = 'Aprovado'
