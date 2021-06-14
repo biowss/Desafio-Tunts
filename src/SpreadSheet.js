@@ -30,31 +30,38 @@ exports.editSpreadSheet = async() =>{
 
   // manipulate rows and save
   rows.slice(2).forEach((row) => {
-    let p1 = parseInt(row._rawData[3])
-    let p2 = parseInt(row._rawData[4])
-    let p3 = parseInt(row._rawData[5])
-    let abscence = parseInt(row._rawData[2])
+    try {
+      let p1 = parseInt(row._rawData[3])
+      let p2 = parseInt(row._rawData[4])
+      let p3 = parseInt(row._rawData[5])
+      let abscence = parseInt(row._rawData[2])
 
-    let averageGrade = ((p1 + p2 + p3) / 3).toFixed()
-    let averageAbscence = ( abscence / totalClasses) * 100
+      let averageGrade = ((p1 + p2 + p3) / 3).toFixed()
+      let averageAbscence = ( abscence / totalClasses) * 100
+        
       
-    // test for abscences and averate grade
-    if(averageAbscence > Settings['abscence-limit']) {
-      row._rawData[6] = 'Reprovado por Falta'
-    }
-    else if(averageGrade < Settings['grade-final']) {
-      row._rawData[6] = 'Reprovado por Nota'  
-    }
-    else if(averageGrade < Settings['grade-approval']) {
-      row._rawData[6] = 'Exame Final'
-    }
-    else {
-      row._rawData[6] = 'Aprovado'
-    }
+      // test for abscences and averate grade
+      if(averageAbscence > Settings['abscence-limit']) {
+        row._rawData[6] = 'Reprovado por Falta'        
+        row._rawData[7] = 0
+      }
+      else if(averageGrade < Settings['grade-final']) {
+        row._rawData[6] = 'Reprovado por Nota'  
+        row._rawData[7] = 0
+      }
+      else if(averageGrade < Settings['grade-approval']) {
+        row._rawData[6] = 'Exame Final'
+        row._rawData[7] = 10 - averageGrade
+      }
+      else {
+        row._rawData[6] = 'Aprovado'
+        row._rawData[7] = 0
+      }
 
-    // set average grade
-    row._rawData[7] = averageGrade
-
+    }
+    catch(error){
+      console.log("Error", error)
+    }
     // save modifications
     row.save()
   })
