@@ -31,13 +31,15 @@ exports.editSpreadSheet = async() =>{
   // manipulate rows and save
   rows.slice(2).forEach((row) => {
     try {
-      let p1 = parseInt(row._rawData[3])
-      let p2 = parseInt(row._rawData[4])
-      let p3 = parseInt(row._rawData[5])
-      let abscence = parseInt(row._rawData[2])
+      const id = parseInt(row._rawData[0])
+      const student = row._rawData[1]
+      const abscence = parseInt(row._rawData[2])
+      const p1 = parseInt(row._rawData[3])
+      const p2 = parseInt(row._rawData[4])
+      const p3 = parseInt(row._rawData[5])
 
-      let averageGrade = ((p1 + p2 + p3) / 3).toFixed()
-      let averageAbscence = ( abscence / totalClasses) * 100
+      const averageGrade = ((p1 + p2 + p3) / 3).toFixed()
+      const averageAbscence = ( abscence / totalClasses) * 100
         
       
       // test for abscences and averate grade
@@ -57,12 +59,12 @@ exports.editSpreadSheet = async() =>{
         row._rawData[6] = 'Aprovado'
         row._rawData[7] = 0
       }
-
+      // save modifications
+      row.save()
+      console.log(`Student ${id} - ${student}: Updated`)
     }
     catch(error){
       console.log("Error", error)
-    }
-    // save modifications
-    row.save()
-  })
+    }    
+  }) 
 }
